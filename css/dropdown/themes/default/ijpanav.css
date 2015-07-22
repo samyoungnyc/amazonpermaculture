@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+/** 
+ * Default CSS Drop-Down Menu Theme
+ *
+ * @file		default.css
+ * @name		Default
+ * @version		0.1
+ * @type		transitional
+ * @browsers	Windows: IE5+, Opera7+, Firefox1+
+ *				Mac OS: Safari2+, Firefox2+
+ *
+ * @link		http://www.lwis.net/
+ * @copyright	2008 Live Web Institute. All Rights Reserved.
+ *
+ * Module Classes: *.dir {} *.on {} *.open {} li.hover {} li.first {} li.last {}
+ * Expected directory tag - li
+ *
+ */
+
+
+/*-------------------------------------------------/
+ * @section		Base Drop-Down Styling
+ * @structure	ul (unordered list)
+ *				ul li (list item)
+ *				ul li a (links)
+ *				/*\.class|(li|a):hover/
+ * @level sep	ul
+ */
+
+
+/*
+
+#main_nav li { display: block; list-style-type: none; float: left; line-height: 30px; }
+#main_nav li a { display:block; float:left; padding: 0 8px; height: 30px; color:#FFF; text-decoration: none; border-right: 1px solid #362E24; }
+#main_nav li a:hover, #main_nav li a.this { color:#323942; background-color: #EFF6F2; }
+*/
+
+
+
+ul.dropdown { font-family:Helvetica, Arial, Geneva, sans-serif; font-weight: bold; color:#EFF6F2; }
+
+	ul.dropdown li a, ul.dropdown li.dir {
+	 display: block;
+	 padding: 7px 10px;
+	 line-height: 16px;
+	 border-style: solid;
+	 border-width: 0 1px 0 0;
+	 border-color: #362E24;
+	 background-color: transparent;
+	}
+
+
+	ul.dropdown li.hover,
+	ul.dropdown li:hover {
+	 background-color: #EFF6F2;
+	 color: #323942;
+	}
+
+
+	ul.dropdown a:link,
+	ul.dropdown a:visited	{ color: #EFF6F2; text-decoration: none; }
+	ul.dropdown a:hover, ul.dropdown a.on		{ background-color: #EFF6F2; color: #323942; }
+	ul.dropdown a:active	{ color: #323942; }
+
+
+	/* -- level mark -- */
+
+	ul.dropdown ul {
+	 width: 150px;
+	 margin-top: 0px;
+	 background-color: #84C4CB;
+	 border-bottom: 1px solid #362E24;
+	}
+
+		ul.dropdown ul li a {
+		 font-weight: bold;
+		 border-width:1px 1px 0 1px;
+		}
+
+
+
+/*-------------------------------------------------/
+ * @section		Support Class `dir`
+ * @level sep	ul, .class
+ */
+
+
+ul.dropdown *.dir {
+ padding-right: 20px !important;
+ background-image: url(images/nav-arrow-down.png);
+ background-position: 100% 50%;
+ background-repeat: no-repeat;
+}
+
+
+/* -- Components override -- */
+
+ul.dropdown-horizontal ul *.dir {
+ padding-right: 15px;
+ background-image: url(images/nav-arrow-right.png);
+ background-position: 100% 50%;
+ background-repeat: no-repeat;
+}
+
+ul.dropdown-upward *.dir {
+ background-image: url(images/nav-arrow-top.png);
+}
+
+ul.dropdown-vertical *.dir,
+ul.dropdown-upward ul *.dir {
+ background-image: url(images/nav-arrow-right.png);
+}
+
+ul.dropdown-vertical-rtl *.dir {
+ padding-right: 10px;
+ padding-left: 15px;
+ background-image: url(images/nav-arrow-left.png);
+ background-position: 0 50%;
+}
